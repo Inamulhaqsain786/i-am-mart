@@ -22,6 +22,7 @@ html {
     --tag-clr: #7cc576;
 }
 
+
 /*basic styling*/
 
 li {
@@ -30,6 +31,7 @@ li {
 
 a {
     text-decoration: none;
+    text: var(--width-clr)
 }
 
 a:hover {
@@ -186,9 +188,15 @@ button {
     transition: all .3s ease-in-out;
 }
 
+button a {
+    color: white;
+    text-decoration: none;
+    /* removes underline */
+}
 
 button:hover {
-    background: var(--light-black);
+    background: var(--black-clr);
+    text
 }
 
 .category-container {
@@ -249,6 +257,7 @@ button:hover {
 
 }
 
+/*new products*/
 
 h2 {
     font-size: 2rem;
@@ -344,6 +353,7 @@ del {
     background: var(--primary-clr);
 }
 
+/*new prtduct end*/
 .sale-container {
     padding-block: 5rem;
     text-align: center;
@@ -556,6 +566,25 @@ form h3 {
 
 
 
+.add-to-cart-animation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4BB543;
+    /* Hara Rang */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 9999;
+}
+
+.add-to-cart-animation.fade-out {
+    opacity: 0;
+}
 
 
 
@@ -563,8 +592,57 @@ form h3 {
 
 
 
+/* Search Box Hidden Overlay */
+.search-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 
+.search-container input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 12px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #555;
+}
+
+.close-search {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
 
 
 
@@ -636,4 +714,71 @@ form h3 {
     .category:nth-child(4) {
         grid-row: auto;
     }
+}
+
+/* ==== User Login Box ==== */
+.user-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*background: rgba(255, 255, 255, 0.95);*/
+    padding: 40px 20px;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+.user-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.user-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.user-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-container button:hover {
+    background-color: #444;
+}
+
+.user-container p {
+    margin-top: 10px;
+}
+
+.close-user {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
 }
