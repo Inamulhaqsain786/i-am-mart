@@ -17,11 +17,11 @@
         <nav class="navbar flex container">
             <a href="#" class="logo">MALIK <span>MART.</span></a>
             <ul class="navlist flex">
-                <li><a href="/mart.html" class="link">Home</a></li>
-                <li><a href="/product/shop.html" class="link">Shop</a></li>
-                <li><a href="/product/page.html" class="link link-active">Page</a></li>
-                <li><a href="/product/blog.html" class="link">Blog</a></li>
-                <li><a href="/product/contact.html" class="link">Contact</a></li>
+                <li><a href="/index.html" class="link">Home</a></li>
+                <li><a href="/shop.html" class="link">Shop</a></li>
+                <li><a href="/page.html" class="link link-active">Page</a></li>
+                <li><a href="/blog.html" class="link">Blog</a></li>
+                <li><a href="/contact.html" class="link">Contact</a></li>
                 <li class="nav-icons flex">
                     <a href="#" class="icon" onclick="toggleSearch()"><i class="fa fa-search"></i></a>
                     <a href="#" class="icon" onclick="toggleUser()"><i class="fa fa-user"></i></a>
@@ -30,6 +30,29 @@
             </ul>
         </nav>
     </header>
+
+
+
+    <!-- Search Bar Box (Hidden by default) -->
+    <div class="search-box" id="searchBox">
+        <div class="search-container">
+            <input type="text" placeholder="Search products..." id="searchInput" />
+            <button onclick="performSearch()"><i class="fa fa-search"></i></button>
+            <span class="close-search" onclick="toggleSearch()">&times;</span>
+        </div>
+    </div>
+
+    <!-- User Login/Register Box -->
+    <div class="user-box" id="userBox">
+        <div class="user-container">
+            <span class="close-user" onclick="toggleUser()">&times;</span>
+            <h2>Welcome to Malik Mart</h2>
+            <input type="email" placeholder="Email" id="userEmail">
+            <input type="password" placeholder="Password" id="userPassword">
+            <button onclick="loginUser()">Login</button>
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+    </div>
 
     <!-- Search Box -->
     <div id="searchBox" style="display:none; padding: 10px; background: #f1f1f1; text-align:center;">
@@ -93,7 +116,7 @@
         <div class="container center">
             <h2>Join Our Community</h2>
             <p>Subscribe to our newsletter and stay updated with the latest offers!</p>
-            <a href="/product/contact.html" class="btn">Contact Us</a>
+            <a href="/contact.html" class="btn">Contact Us</a>
         </div>
     </section>
 

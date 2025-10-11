@@ -1,129 +1,112 @@
-/* === CSS Variables === */
-:root {
-    --primary-clr: #e63946;
-    /* red */
-    --secondary-clr: #f1f1f1;
-    /* light gray background */
-    --light-black: #333333;
-    /* dark text */
-    --width-clr: #ffffff;
-    /* white background */
-}
+/* page.css */
 
-header {
-    background: var(--width-clr);
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 99;
-    box-shadow: 0px 5px 14.25px .75px rgba(36, 11, 12, .05);
-}
-
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--light-black)
-}
-
-
-.link {
-    font-size: .95rem;
-    color: var(--light-black);
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.icon {
-    font-size: .9rem;
-    color: var(--light-black);
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+/* Hero Section */
+.hero.section {
+    background: linear-gradient(to right, #f6f8fa, #ffffff);
+    padding: 60px 20px;
     text-align: center;
-    border-radius: 50%;
-
 }
 
-.icon:hover,
-.icon-active {
-    background: var(--secondary-clr);
-}
-
-span,
-.link-active,
-.icon-active {
+.hero.section h1 {
+    font-size: 36px;
     color: var(--primary-clr)
 }
 
 
-.navbar {
-    height: 12vh;
-    justify-content: space-between;
+
+h1 .store {
+    font-size: 36px;
+    color: #000;
 }
 
-.navlist {
-    gap: 2.5rem;
+.hero.section p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
 }
 
-.nav-icons {
-    gap: .8rem;
-}
-
-.hamburger {
-    font-size: 1.7rem;
-    color: var(--primary-clr);
-    display: none;
-}
-
-.section {
-    margin-top: 1.2rem;
-}
-
-
-.contact-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-h1 {
-    color: var(--primary-clr);
+/* About Section */
+.section .container h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input,
-textarea {
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #ccc;
+.section .container p {
     font-size: 16px;
-    border-radius: 4px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-button {
-    background-color: var(--primary-clr);
+/* Features Boxes */
+.secondary-bg {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+.box {
+    flex: 1 1 250px;
+    margin: 15px;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.box i {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.box h5 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.box p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* CTA Section */
+.center {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #222;
     color: white;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-}
-
-button:hover {
-    background-color: black;
+    border-radius: 6px;
+    text-decoration: none;
 }
 
 
 
-/*footer*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
@@ -156,6 +139,7 @@ li {
 
 a {
     text-decoration: none;
+    text: var(--width-clr)
 }
 
 a:hover {
@@ -312,9 +296,15 @@ button {
     transition: all .3s ease-in-out;
 }
 
+button a {
+    color: white;
+    text-decoration: none;
+    /* removes underline */
+}
 
 button:hover {
-    background: var(--light-black);
+    background: var(--black-clr);
+    text
 }
 
 .category-container {
@@ -684,6 +674,25 @@ form h3 {
 
 
 
+.add-to-cart-animation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4BB543;
+    /* Hara Rang */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 9999;
+}
+
+.add-to-cart-animation.fade-out {
+    opacity: 0;
+}
 
 
 
@@ -691,8 +700,57 @@ form h3 {
 
 
 
+/* Search Box Hidden Overlay */
+.search-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 
+.search-container input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 12px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #555;
+}
+
+.close-search {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
 
 
 
@@ -764,4 +822,143 @@ form h3 {
     .category:nth-child(4) {
         grid-row: auto;
     }
+}
+
+/* ==== User Login Box ==== */
+.user-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*background: rgba(255, 255, 255, 0.95);*/
+    padding: 40px 20px;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+.user-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.user-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.user-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-container button:hover {
+    background-color: #444;
+}
+
+.user-container p {
+    margin-top: 10px;
+}
+
+.close-user {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+.section-image {
+    margin-top: 15rem;
+}
+
+
+/* ==== User Login Box ==== */
+.user-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*background: rgba(255, 255, 255, 0.95);*/
+    padding: 40px 20px;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-container {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+.user-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.user-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.user-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-container button:hover {
+    background-color: #444;
+}
+
+.user-container p {
+    margin-top: 10px;
+}
+
+.close-user {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
 }
