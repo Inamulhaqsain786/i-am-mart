@@ -43,3 +43,35 @@ function loginUser() {
         alert("Please enter email and password.");
     }
 }
+
+
+
+
+
+
+
+// ✅ Initialize cart count from localStorage
+document.addEventListener("DOMContentLoaded", function () {
+    let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+
+    // Update badge if exists
+    const badge = document.querySelector(".cart-badge");
+    if (badge) {
+        badge.textContent = cartCount;
+    }
+
+    // Add click listener to all "Add to Cart" buttons
+    document.querySelectorAll(".add-to-cart").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            cartCount++;
+            localStorage.setItem("cartCount", cartCount);
+
+            // Update badge
+            if (badge) {
+                badge.textContent = cartCount;
+                badge.classList.add("pop");
+                setTimeout(() => badge.classList.remove("pop"), 300);
+            }
+        });
+    });
+});

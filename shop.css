@@ -13,7 +13,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 :root {
     --width-clr: #fff;
     --black-clr: #000;
@@ -23,6 +22,7 @@ html {
     --tag-clr: #7cc576;
 }
 
+
 /*basic styling*/
 
 li {
@@ -31,6 +31,7 @@ li {
 
 a {
     text-decoration: none;
+    text: var(--width-clr)
 }
 
 a:hover {
@@ -111,12 +112,12 @@ header {
     background: var(--secondary-clr);
 }
 
-
 span,
 .link-active,
 .icon-active {
     color: var(--primary-clr)
 }
+
 
 .navbar {
     height: 12vh;
@@ -187,9 +188,15 @@ button {
     transition: all .3s ease-in-out;
 }
 
+button a {
+    color: white;
+    text-decoration: none;
+    /* removes underline */
+}
 
 button:hover {
-    background: var(--light-black);
+    background: var(--black-clr);
+    text
 }
 
 .category-container {
@@ -559,87 +566,26 @@ form h3 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 700px) {
-    .navlist {
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: var(--black-clr);
-        padding: 2rem;
-        transform: translateY(-100%);
-        transition: transform .3s ease-in-out;
-    }
-
-    .navlist-active {
-        transform: translateY(20%);
-    }
-
-    .navlist a {
-        color: var(--secondary-clr);
-        font-weight: 400;
-    }
-
-    .nav-icons a,
-    .link:hover,
-    .navlist .link-active {
-        color: var(--primary-clr);
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .container {
-        max-width: 95%;
-    }
-
-    .hero {
-        height: 60vh;
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        line-height: 1.3rem;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-        line-height: 4rem;
-    }
-
-    h4 {
-        font-size: 1.1rem;
-        line-height: 2rem;
-    }
-
-    .category-container {
-        grid-template-columns: 1fr;
-    }
-
-    .category:nth-child(1),
-    .category:nth-child(2),
-    .category:nth-child(4) {
-        grid-row: auto;
-    }
+.add-to-cart-animation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4BB543;
+    /* Hara Rang */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 9999;
 }
+
+.add-to-cart-animation.fade-out {
+    opacity: 0;
+}
+
 
 
 
@@ -835,4 +781,38 @@ form h3 {
     font-size: 24px;
     cursor: pointer;
     color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.add-to-cart-animation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4BB543; /* green */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 9999;
+}
+
+.add-to-cart-animation.fade-out {
+    opacity: 0;
 }
